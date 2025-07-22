@@ -1,65 +1,17 @@
 import React from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { Header } from './Components-LandingPage/Header'
+import { MainSection } from './Components-LandingPage/MainSection'
+import { Works } from './Components-LandingPage/Works'
 
 function App() {
   return (
     <>
-        <div>
-      <header>
-        <div>
-          <span>ProJobs</span>
-        </div>
-        <nav>
-          <a href="#">Job Search</a>
-          <a href="#">Companies</a>
-          <a href="#">Career Resources</a>
-          <a href="#">For Employers</a>
-          <a href="#">Sign In</a>
-        </nav>
-        <button>
-        </button>
-      </header>
-
-      <main>
-        <h1>Discover Your Next Professional Opportunity</h1>
-        <p>
-          Connecting top talent with leading companies worldwide. Your career journey starts here.
-        </p>
-        <div>
-          <div>
-            <label htmlFor="job-title">Job title, skills, or company</label>
-            <input type="text" id="job-title" placeholder="Job title, skills, or company" />
-          </div>
-          <div>
-            <label htmlFor="location">Location (e.g., City, State, Remote)</label>
-            <input type="text" id="location" placeholder="Location (e.g., London, Remote)" />
-          </div>
-          <button>Search</button>
-        </div>
-      </main>
-
-      <section>
-        <h2>How It Works</h2>
-        <div>
-          <div>
-            <div>1</div>
-            <h3>Create Your Profile</h3>
-            <p>Build a professional profile showcasing your skills and experience.</p>
-          </div>
-          <div>
-            <div>2</div>
-            <h3>Explore Opportunities</h3>
-            <p>Browse thousands of jobs tailored to your preferences and apply easily.</p>
-          </div>
-          <div>
-            <div>3</div>
-            <h3>Land Your Dream Job</h3>
-            <p>Connect with top employers and take the next step in your career.</p>
-          </div>
-        </div>
-      </section>
-
+      <div>
+      <Header />
+      <MainSection />
+      <Works />
       <section>
         <h2>Latest Job Listings</h2>
         <div>
@@ -154,7 +106,7 @@ function App() {
           &copy; {new Date().getFullYear()} ProJobs. All rights reserved.
         </div>
       </footer>
-    </div>
+      </div>
     </>
   )
 }
