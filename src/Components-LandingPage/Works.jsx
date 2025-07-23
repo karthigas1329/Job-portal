@@ -1,27 +1,19 @@
 import React from 'react'
 import './Works.css'
+import brief from '../assets/briefcase.png';
+import ideas from '../assets/ideas.png';
+import profile from '../assets/profile.png';
+import { Infocard } from './Infocard';
 
 export const Works = () => {
   return (
     <>
-      <section className='worksSection'> 
-        <h2 className='workHeading'>How It Works</h2>
-        <div>
-          <div>
-            <div>1</div>
-            <h3>Create Your Profile</h3>
-            <p>Build a professional profile showcasing your skills and experience.</p>
-          </div>
-          <div>
-            <div>2</div>
-            <h3>Explore Opportunities</h3>
-            <p>Browse thousands of jobs tailored to your preferences and apply easily.</p>
-          </div>
-          <div>
-            <div>3</div>
-            <h3>Land Your Dream Job</h3>
-            <p>Connect with top employers and take the next step in your career.</p>
-          </div>
+      <section className='works-section'> 
+        <h2 className='work-heading'>How It Works ?</h2>
+        <div className='infocard-section'>
+          <Infocard infoimage={profile} heading={"Create Your Profile"} description={"Build a professional profile showcasing your skills and experience."}/>
+          <Infocard infoimage={ideas} heading={"Explore Opportunities"} description={"Browse thousands of jobs tailored to your preferences and apply easily."}/>
+          <Infocard infoimage={brief} heading={"Land Your Dream Job"} description={"Connect with top employers and take the next step in your career."}/>
         </div>
       </section>
     </>
