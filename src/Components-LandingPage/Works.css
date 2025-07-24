@@ -6,23 +6,14 @@
     align-items: center;
 }
 
+.work-heading{
+    font-size: 40px;
+    margin-top: 40px;
+}
+
 .infocard-section {
     display: flex;
-    gap: 7rem;
+    gap: 10rem;
     margin-top: 30px;
-}
-
-.infocard{
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px 30px 20px;
-    border-radius: 12px;
-    margin-bottom: 8rem;
-    width: 20rem;
-}
-
-.info-image{
-    width: 80px;
+    flex-wrap: wrap;
 }

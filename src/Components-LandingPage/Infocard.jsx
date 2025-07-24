@@ -1,4 +1,5 @@
 import React from 'react'
+import './Infocard.css'
 
 export const Infocard = (props) => {
   return (
