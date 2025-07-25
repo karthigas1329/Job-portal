@@ -5,6 +5,7 @@ import { Works } from './Components-LandingPage/Works'
 import { Joblisting } from './Components-LandingPage/Joblisting'
 import { Topcompanies } from './Components-LandingPage/Topcompanies'
 import { Choice } from './Components-LandingPage/Choice'
+import { Newsletter } from './Components-LandingPage/Newsletter'
 
 export const Landingpage = () => {
   return (
@@ -15,16 +16,7 @@ export const Landingpage = () => {
       <Joblisting />
       <Topcompanies />
       <Choice />
-      <section>
-        <h2>Stay Updated with New Opportunities</h2>
-        <p>
-          Subscribe to our newsletter and get the latest job alerts and career advice delivered to your inbox.
-        </p>
-        <div>
-          <input type="email" placeholder="Enter your email address" />
-          <button>Subscribe</button>
-        </div>
-      </section>
+      <Newsletter />
 
       <footer>
         <div>
