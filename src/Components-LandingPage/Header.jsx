@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.css'
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [activeItem, setActiveItem] = React.useState("Home");
@@ -24,11 +25,11 @@ export const Header = () => {
     </nav>
 
     <div className="auth-links">
-      <a href="#" className="login-btn">Login</a>
-      <a href="#" className="signup-btn">Signup</a>
+      <a href="#" className="login-btn"><Link to="/Job-portal/jobseeker">Login</Link></a>
+      <a href="#" className="signup-btn">Sign up</a>
       <div className="separator"></div>
       <div className="dropdown" onMouseEnter={handleEmployerDropdown}>
-        For Employers <span className={`material-symbols-rounded arrow-icon ${arrowRotated ? 'arrow-rotated' : ''}`}>arrow_back_ios</span>
+        <Link to="/Job-portal/employer">For Employers <span className={`material-symbols-rounded arrow-icon ${arrowRotated ? 'arrow-rotated' : ''}`}>arrow_back_ios</span></Link>
       </div>
     </div>
     </header>
