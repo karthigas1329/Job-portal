@@ -10,18 +10,17 @@ export const Jlog = () => {
       <header className="login-header">
         <Link to="/Job-portal" className="logo">
           <span className="logo-text">job portal</span>
-          <span className="subtext">Job seekers</span>
         </Link>
         <div className="header-links">
           <span className='no-account'>Don’t have an account?</span>
           <Link to="/Job-portal/jobseeker/signup" className="signup-btn">Sign up</Link>
           <div className="separator"></div>
-          <a href="#" className="employer-redirect-link">Employers Login</a>
+          <Link to='/Job-portal/employer' className="employer-redirect-link">Employers Login</Link>
         </div>
       </header>
 
       <div className="login-body">
-        <div className="illustration">
+        <div className="login-illustration">
           <img src={manSitting} alt="Login Illustration" />
         </div>
 
