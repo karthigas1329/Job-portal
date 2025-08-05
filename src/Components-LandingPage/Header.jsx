@@ -4,15 +4,10 @@ import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [activeItem, setActiveItem] = React.useState("Home");
-  const [arrowRotated,setArrowRotated] = React.useState(true);
 
   const handleNavClick = (itemName) => {
     setActiveItem(itemName);
   };
-
-  const handleEmployerDropdown= ()=>{
-    setArrowRotated(prev=>!prev)
-  }
 
   return (
     <>
@@ -25,12 +20,10 @@ export const Header = () => {
     </nav>
 
     <div className="auth-links">
-      <a href="#" className="login-btn"><Link to="/Job-portal/jobseeker">Login</Link></a>
-      <a href="#" className="signup-btn">Sign up</a>
+      <Link to="/Job-portal/jobseeker/login" className="login-btn">Login</Link>
+      <Link to="/Job-portal/jobseeker/signup" className="signup-btn">Sign up</Link>
       <div className="separator"></div>
-      <div className="dropdown" onMouseEnter={handleEmployerDropdown}>
-        <Link to="/Job-portal/employer">For Employers <span className={`material-symbols-rounded arrow-icon ${arrowRotated ? 'arrow-rotated' : ''}`}>arrow_back_ios</span></Link>
-      </div>
+      <Link to="/Job-portal/employer" className="Emp-Log-link">For Employers</Link>
     </div>
     </header>
     </>

@@ -4,6 +4,7 @@ import { Landingpage } from './Landingpage'
 import { EmpLog } from './EmpLog'
 import { Jlog } from './Jlog'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Jsignup } from './Jsignup'
 
 const router = createBrowserRouter([{
   path: '/Job-portal',
@@ -14,8 +15,12 @@ const router = createBrowserRouter([{
   element: <EmpLog />,
 },
 {
-  path: '/Job-portal/jobseeker',
+  path: '/Job-portal/jobseeker/login',
   element: <Jlog />,
+},
+{
+  path: '/Job-portal/jobseeker/signup',
+  element: <Jsignup />,
 }])
 
 function App() {

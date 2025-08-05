@@ -33,7 +33,7 @@ body {
 }
 
 .no-account {
-    color: #777;
+  color: #777;
 }
 
 .header-links {
@@ -42,23 +42,11 @@ body {
   gap: 12px;
 }
 
-.j-signup-btn {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #ffffff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  border: none;
-  font-size: 17px;
-}
-
-.employer-login {
+.employer-redirect-link {
   color: #032240;
   font-weight: 500;
   text-decoration: none;
-  border-left: 1px solid #ccc;
-  padding-left: 12px;
+  font-size: 20px;
 }
 
 .login-body {

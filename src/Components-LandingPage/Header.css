@@ -15,6 +15,7 @@
   font-size: 25px;
   font-weight: bold;
   color: #007bff;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -62,31 +63,14 @@
 }
 
 .separator {
-  width: 1.5px;
+  width: 2px;
   height: 32px;
-  background-color: #ededed;
+  background-color: #EDEDED;
   opacity: 1;
 }
 
-.dropdown {
+.Emp-Log-link{
+  text-decoration: none;
   color: #032240;
-  display: flex;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  align-items: center;
-}
-
-.arrow-icon {
-  font-size: 15px;
-  margin-top: 7px;
-  margin-left: 15px;
-  transition: transform 0.3s ease;
-  transform: rotate(-0deg);
-}
-
-.arrow-rotated {
-  transform: rotate(-90deg); 
-  margin-left: 15px;
-  margin-top: 0px;
+  font-size: 20px;
 }
