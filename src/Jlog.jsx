@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import manSitting from './assets/Illustration_1.png'
+import eye from './assets/show_password.png'
 import Google from './assets/GOOG.png'
 import './Jlog.css'
 
@@ -33,6 +34,7 @@ export const Jlog = () => {
           <label>Password</label>
           <div className="password-wrapper">
             <input type="password" placeholder="Enter your password" />
+            <span className="eye-icon"><img src={eye} className='show-icon' alt='show'/></span>
           </div>
 
           <div className="form-options">

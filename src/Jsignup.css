@@ -27,15 +27,15 @@ body {
 }
 
 .signup-illustration img{
-  height: 500px;
+  height: 650px;
+  margin-left: 100px;
 }
 
 .j-sign-up-body {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 40px 60px;
-  gap: 40px;
 }
 
 .j-sign-up-form {
@@ -43,7 +43,7 @@ body {
   width: 100%;
   background: #fff;
   padding: 20px 0;
-  margin-left: 100px;
+  margin-right: 100px;
   transform: translateY(-15px); 
 }
 

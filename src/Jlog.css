@@ -51,7 +51,8 @@ body {
 }
 
 .login-illustration img {
-  height: 600px;
+  height: 700px;
+  margin-left: 40px;
 }
 
 .login-form {
@@ -90,6 +91,17 @@ body {
 
 .password-wrapper {
   position: relative;
+}
+
+.password-wrapper .eye-icon {
+  position: absolute;
+  right: -15px;
+  top: 8px;
+  cursor: pointer;
+}
+
+.show-icon{
+  height: 30px;
 }
 
 .form-options {

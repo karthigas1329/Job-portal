@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import workTime from './assets/WorkTime.png'
 import Google from './assets/GOOG.png'
+import eye from './assets/show_password.png'
 import './Jsignup.css'
 
 export const Jsignup = () => {
@@ -34,7 +35,10 @@ export const Jsignup = () => {
           <input type="email" placeholder="Enter your Email ID" />
 
           <label>Password</label>
-          <input type="password" placeholder="Create a new password" />
+          <div className="password-wrapper">
+            <input type="password" placeholder="Create a new password" />
+            <span className="eye-icon"><img src={eye} className='show-icon' alt='show'/></span>
+          </div>
 
           <label>Mobile number (optional)</label>
           <input type="text" placeholder="Enter your mobile number" />
