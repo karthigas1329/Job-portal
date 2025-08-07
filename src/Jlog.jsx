@@ -39,7 +39,7 @@ export const Jlog = () => {
 
           <div className="form-options">
             <label><input type="checkbox" /> Remember me</label>
-            <a href="#" className='forgot-password'>Forgot Password?</a>
+            <Link to="/Job-portal/jobseeker/login/forgetpassword" className='forgot-password'>Forgot Password?</Link>
           </div>
 
           <button className="j-login-btn">Login</button>

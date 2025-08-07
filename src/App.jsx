@@ -5,6 +5,7 @@ import { EmpLog } from './EmpLog'
 import { Jlog } from './Jlog'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Jsignup } from './Jsignup'
+import { JForgetPassword } from './JForgetPassword'
 
 const router = createBrowserRouter([{
   path: '/Job-portal',
@@ -17,6 +18,10 @@ const router = createBrowserRouter([{
 {
   path: '/Job-portal/jobseeker/login',
   element: <Jlog />,
+},
+{
+  path: '/Job-portal/jobseeker/login/forgetpassword',
+  element: <JForgetPassword />,
 },
 {
   path: '/Job-portal/jobseeker/signup',
