@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Elogin.css'
 
-export const EmpLog = () => {
+export const Elogin = () => {
   return (
     <div>
         <h1>Employer login</h1>

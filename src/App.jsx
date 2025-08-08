@@ -1,11 +1,12 @@
 import React from 'react'
 import './App.css'
 import { Landingpage } from './Landingpage'
-import { EmpLog } from './EmpLog'
-import { Jlog } from './Jlog'
+import { Elogin } from './Components-EmployerSignup/Elogin'
+import { Jlogin } from './Components-JobseekerSignup/Jlogin'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Jsignup } from './Jsignup'
-import { JForgetPassword } from './JForgetPassword'
+import { Jsignup } from './Components-JobseekerSignup/Jsignup'
+import { Jcreatepassword } from './Components-JobseekerSignup/Jcreatepassword'
+import { Jforgotpassword } from './Components-JobseekerSignup/JForgotpassword'
 
 const router = createBrowserRouter([{
   path: '/Job-portal',
@@ -13,19 +14,23 @@ const router = createBrowserRouter([{
 },
 {
   path: '/Job-portal/employer',
-  element: <EmpLog />,
+  element: <Elogin />,
 },
 {
   path: '/Job-portal/jobseeker/login',
-  element: <Jlog />,
+  element: <Jlogin />,
 },
 {
-  path: '/Job-portal/jobseeker/login/forgetpassword',
-  element: <JForgetPassword />,
+  path: '/Job-portal/jobseeker/login/forgotpassword',
+  element: <Jforgotpassword />,
 },
 {
   path: '/Job-portal/jobseeker/signup',
   element: <Jsignup />,
+},
+{
+  path: '/Job-portal/jobseeker/login/forgetpassword/createpassword',
+  element: <Jcreatepassword />,
 }])
 
 function App() {

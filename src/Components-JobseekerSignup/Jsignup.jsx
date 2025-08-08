@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import workTime from './assets/WorkTime.png'
-import Google from './assets/GOOG.png'
-import eye from './assets/show_password.png'
+import workTime from '../assets/WorkTime.png'
+import Google from '../assets/GOOG.png'
+import eye from '../assets/show_password.png'
 import './Jsignup.css'
 
 export const Jsignup = () => {

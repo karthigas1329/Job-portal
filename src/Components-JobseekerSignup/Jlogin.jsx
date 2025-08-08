@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import manSitting from './assets/Illustration_1.png'
-import eye from './assets/show_password.png'
-import Google from './assets/GOOG.png'
-import './Jlog.css'
+import manSitting from '../assets/Illustration_1.png'
+import eye from '../assets/show_password.png'
+import Google from '../assets/GOOG.png'
+import './Jlogin.css'
 
-export const Jlog = () => {
+export const Jlogin = () => {
   return (
     <div className="login-page">
       <header className="login-header">
@@ -39,7 +39,7 @@ export const Jlog = () => {
 
           <div className="form-options">
             <label><input type="checkbox" /> Remember me</label>
-            <Link to="/Job-portal/jobseeker/login/forgetpassword" className='forgot-password'>Forgot Password?</Link>
+            <Link to="/Job-portal/jobseeker/login/forgotpassword" className='forgot-password'>Forgot Password?</Link>
           </div>
 
           <button className="j-login-btn">Login</button>
