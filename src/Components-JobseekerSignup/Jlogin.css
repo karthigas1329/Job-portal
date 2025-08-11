@@ -96,12 +96,12 @@ body {
 .password-wrapper .eye-icon {
   position: absolute;
   right: -15px;
-  top: 8px;
+  top: 15px;
   cursor: pointer;
 }
 
 .show-icon{
-  height: 30px;
+  height: 20px;
 }
 
 .form-options {

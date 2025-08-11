@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import manSitting from '../assets/Illustration_1.png'
 import eye from '../assets/show_password.png'
+import eyeHide from '../assets/eye-hide.png'
 import Google from '../assets/GOOG.png'
 import './Jlogin.css'
 
 export const Jlogin = () => {
+  
+  const [passwordShow, setPasswordShow] = useState(true)
+
+  const togglePasswordView = ()=>{
+    setPasswordShow((prev)=>!prev)
+  }
+
   return (
     <div className="login-page">
       <header className="login-header">
@@ -33,8 +41,8 @@ export const Jlogin = () => {
 
           <label>Password</label>
           <div className="password-wrapper">
-            <input type="password" placeholder="Enter your password" />
-            <span className="eye-icon"><img src={eye} className='show-icon' alt='show'/></span>
+            <input type={passwordShow?"password":"text"} placeholder="Enter your password" />
+            <span className="eye-icon" onClick={togglePasswordView}><img src={passwordShow?eye:eyeHide} className='show-icon' alt='show'/></span>
           </div>
 
           <div className="form-options">

@@ -25,14 +25,12 @@ export const Jcreatepassword = () => {
 
           <label>New Password</label>
           <div className="password-wrapper">
-            <input type="password" placeholder="Enter your password" />
-            <span className="eye-icon"><img src={eye} className='show-icon' alt='show' /></span>
+            <input type="password" placeholder="Enter new password" />
           </div>
 
           <label>Confirm Password</label>
           <div className="password-wrapper">
-            <input type="password" placeholder="Enter your password" />
-            <span className="eye-icon"><img src={eye} className='show-icon' alt='show' /></span>
+            <input type="password" placeholder="Re-enter new password" />
           </div>
 
           <button className="j-reset-link-btn">Rest Password</button>

@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom'
 import workTime from '../assets/WorkTime.png'
 import Google from '../assets/GOOG.png'
 import eye from '../assets/show_password.png'
+import eyeHide from '../assets/eye-hide.png'
 import './Jsignup.css'
 
 export const Jsignup = () => {
+  const [passwordShow, setPasswordShow] = React.useState(true)
+
+  const togglePasswordView = () => {
+    setPasswordShow((prev) => !prev)
+  }
   return (
     <div className="j-sign-up-page">
       <header className="j-sign-up-header">
@@ -36,8 +42,8 @@ export const Jsignup = () => {
 
           <label>Password</label>
           <div className="password-wrapper">
-            <input type="password" placeholder="Create a new password" />
-            <span className="eye-icon"><img src={eye} className='show-icon' alt='show'/></span>
+            <input type={passwordShow?"password":"text"} placeholder="Create a new password" />
+            <span className="eye-icon" onClick={togglePasswordView}><img src={passwordShow?eye:eyeHide} className='show-icon' alt='show' /></span>
           </div>
 
           <label>Mobile number (optional)</label>
