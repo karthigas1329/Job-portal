@@ -104,6 +104,18 @@ body {
   height: 20px;
 }
 
+.error-msg{
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.input-error {
+  border: 1px solid red !important;
+  outline: none;
+}
+
 .form-options {
   display: flex;
   justify-content: space-between;

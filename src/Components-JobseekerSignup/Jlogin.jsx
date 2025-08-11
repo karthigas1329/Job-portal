@@ -7,12 +7,46 @@ import Google from '../assets/GOOG.png'
 import './Jlogin.css'
 
 export const Jlogin = () => {
-  
+
   const [passwordShow, setPasswordShow] = useState(true)
 
-  const togglePasswordView = ()=>{
-    setPasswordShow((prev)=>!prev)
+  const togglePasswordView = () => {
+    setPasswordShow((prev) => !prev)
   }
+
+  const initialValues = { username: "", password: "" }
+  const [formValues, setFormValues] = useState(initialValues)
+
+  const handleForm = (e) => {
+    const { name, value } = e.target
+    setFormValues({ ...formValues, [name]: value })
+    setErrors({ ...errors, [name]: "" })
+  }
+
+  const validateForm = () => {
+    const newErrors = {}
+
+    if (!formValues.username.trim()) {
+      newErrors.username = "Username or Email is required"
+    }
+
+    if (!formValues.password.trim()) {
+      newErrors.password = "Password is required"
+    } else if (formValues.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  function handleSubmit(formData) {
+    if (!validateForm()) {
+      return false // stops form submit if errors
+    }
+    console.log("logged in successfully")
+  }
+  const [errors, setErrors] = useState({})
 
   return (
     <div className="login-page">
@@ -33,17 +67,19 @@ export const Jlogin = () => {
           <img src={manSitting} alt="Login Illustration" />
         </div>
 
-        <div className="login-form">
+        <form action={handleSubmit} className="login-form">
           <h2>Login to continue</h2>
 
           <label>User name / Email ID</label>
-          <input type="text" placeholder="Enter your User name / Email ID" />
+          <input type="text" name="username" placeholder="Enter your User name / Email ID" value={formValues.username} onChange={handleForm} className={errors.username ? "input-error" : ""} />
+          {errors.username && <span className="error-msg">{errors.username}</span>}
 
           <label>Password</label>
           <div className="password-wrapper">
-            <input type={passwordShow?"password":"text"} placeholder="Enter your password" />
-            <span className="eye-icon" onClick={togglePasswordView}><img src={passwordShow?eye:eyeHide} className='show-icon' alt='show'/></span>
+            <input type={passwordShow ? "password" : "text"} placeholder="Enter your password" name='password' value={formValues.password} onChange={handleForm} className={errors.password ? "input-error" : ""} />
+            <span className="eye-icon" onClick={togglePasswordView}><img src={passwordShow ? eye : eyeHide} className='show-icon' alt='show' /></span>
           </div>
+          {errors.password && <span className="error-msg">{errors.password}</span>}
 
           <div className="form-options">
             <label><input type="checkbox" /> Remember me</label>
@@ -58,7 +94,7 @@ export const Jlogin = () => {
             <img src={Google} alt="Google" />
             Google
           </button>
-        </div>
+        </form>
       </div>
     </div>
   )
