@@ -17,6 +17,8 @@ export const Jlogin = () => {
   const initialValues = { username: "", password: "" }
   const [formValues, setFormValues] = useState(initialValues)
 
+  const [errors, setErrors] = useState({})
+
   const handleForm = (e) => {
     const { name, value } = e.target
     setFormValues({ ...formValues, [name]: value })
@@ -32,8 +34,8 @@ export const Jlogin = () => {
 
     if (!formValues.password.trim()) {
       newErrors.password = "Password is required"
-    } else if (formValues.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters"
+    } else if (formValues.password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters"
     }
 
     setErrors(newErrors)
@@ -46,7 +48,6 @@ export const Jlogin = () => {
     }
     console.log("logged in successfully") // This Code is removed after backend integration
   }
-  const [errors, setErrors] = useState({})
 
   return (
     <div className="login-page">
