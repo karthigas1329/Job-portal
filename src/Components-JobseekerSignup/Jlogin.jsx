@@ -44,7 +44,7 @@ export const Jlogin = () => {
     if (!validateForm()) {
       return false // stops form submit if errors
     }
-    console.log("logged in successfully")
+    console.log("logged in successfully") // This Code is removed after backend integration
   }
   const [errors, setErrors] = useState({})
 

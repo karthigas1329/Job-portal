@@ -33,7 +33,7 @@ export const Jcreatepassword = () => {
             <input type="password" placeholder="Re-enter new password" />
           </div>
 
-          <button className="j-reset-link-btn">Rest Password</button>
+          <button className="j-reset-link-btn">Reset Password</button>
 
           <div className='center-div-text'>
             <p>Remember your password? <Link to="/Job-portal/jobseeker/login" className='j-password-form-login-link'>Login</Link></p>
