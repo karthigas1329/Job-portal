@@ -14,7 +14,7 @@ export const Jcreatepassword = () => {
   const handleForm = (e) => {
     const { name, value } = e.target
     setFormValues({ ...formValues, [name]: value })
-    setErrors({ ...errors, [name]: "" }) 
+    setErrors({ ...errors, [name]: "" })
   }
 
   const validateForm = () => {
@@ -40,7 +40,7 @@ export const Jcreatepassword = () => {
 
   const handleSubmit = (e) => {
     if (!validateForm()) {
-      return false 
+      return false
     }
     console.log("Password reset successfully")
   }
@@ -68,7 +68,7 @@ export const Jcreatepassword = () => {
             <input type="password" placeholder="Enter new password" name="newPassword"
               value={formValues.newPassword}
               onChange={handleForm}
-              className={errors.newPassword ? "input-error" : ""}/>
+              className={errors.newPassword ? "input-error" : ""} />
           </div>
           {errors.newPassword && <span className="error-msg">{errors.newPassword}</span>}
 
@@ -77,7 +77,7 @@ export const Jcreatepassword = () => {
             <input type="password" placeholder="Re-enter new password" name="confirmPassword"
               value={formValues.confirmPassword}
               onChange={handleForm}
-              className={errors.confirmPassword ? "input-error" : ""}/>
+              className={errors.confirmPassword ? "input-error" : ""} />
           </div>
           {errors.confirmPassword && <span className="error-msg">{errors.confirmPassword}</span>}
 

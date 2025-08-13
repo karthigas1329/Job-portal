@@ -66,7 +66,7 @@ export const Jsignup = () => {
           <span className='no-account'>Already have an account?</span>
           <Link to="/Job-portal/jobseeker/login" className="signup-btn">Login</Link>
           <div className="separator"></div>
-          <Link to='/Job-portal/employer' className="employer-redirect-link">Employers Login</Link>
+          <Link to='/Job-portal/employer/login' className="employer-redirect-link">Employers Login</Link>
         </div>
       </header>
 

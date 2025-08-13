@@ -1,5 +1,8 @@
 import React from 'react'
 import './MainSection.css'
+import search from '../assets/icon_search.png'
+import location from '../assets/icon_location.png'
+import tick from '../assets/icon_tick.png'
 
 export const MainSection = () => {
   return (
@@ -10,17 +13,19 @@ export const MainSection = () => {
 
       <div className="search-bar">
         <div className="search-field">
-          <span className="material-symbols-outlined main-icon">search</span>
+          <span><img src={search} className="icon-size" alt="search_icon"/></span>
           <input type="text" placeholder="Search by Skills, company or job title" />
         </div>
+        <div className="separator"></div>
 
         <div className="search-field">
-          <span className="material-symbols-outlined main-icon">location_on</span>
+          <span><img src={location} className="icon-size" alt="location_icon"/></span>
           <input type="text" placeholder="Enter Location" />
         </div>
+        <div className="separator"></div>
 
         <div className="search-field">
-          <span className="material-symbols-outlined main-icon">settings</span>
+          <span><img src={tick} className="icon-size" alt="search_tick"/></span>
           <select defaultValue="" required>
             <option value="" disabled hidden>Enter Experience</option>
             <option value="fresher">Fresher</option>

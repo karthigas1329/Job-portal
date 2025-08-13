@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import manSitting from '../assets/Illustration_1.png'
 import eye from '../assets/show_password.png'
 import eyeHide from '../assets/eye-hide.png'
@@ -7,6 +8,8 @@ import Google from '../assets/GOOG.png'
 import './Jlogin.css'
 
 export const Jlogin = () => {
+
+  const navigate = useNavigate();
 
   const [passwordShow, setPasswordShow] = useState(true)
 
@@ -46,7 +49,7 @@ export const Jlogin = () => {
     if (!validateForm()) {
       return false // stops form submit if errors
     }
-    console.log("logged in successfully") // This Code is removed after backend integration
+    navigate("/Job-portal/jobseeker/") // This Code is removed after backend integration 
   }
 
   return (
@@ -59,7 +62,7 @@ export const Jlogin = () => {
           <span className='no-account'>Don’t have an account?</span>
           <Link to="/Job-portal/jobseeker/signup" className="signup-btn">Sign up</Link>
           <div className="separator"></div>
-          <Link to='/Job-portal/employer' className="employer-redirect-link">Employers Login</Link>
+          <Link to='/Job-portal/employer/login' className="employer-redirect-link">Employers Login</Link>
         </div>
       </header>
 

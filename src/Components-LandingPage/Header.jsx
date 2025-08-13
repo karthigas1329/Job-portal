@@ -23,7 +23,7 @@ export const Header = () => {
       <Link to="/Job-portal/jobseeker/login" className="login-btn">Login</Link>
       <Link to="/Job-portal/jobseeker/signup" className="signup-btn">Sign up</Link>
       <div className="separator"></div>
-      <Link to="/Job-portal/employer" className="Emp-Log-link">For Employers</Link>
+      <Link to="/Job-portal/employer/login" className="emp-log-link">For Employers</Link>
     </div>
     </header>
     </>

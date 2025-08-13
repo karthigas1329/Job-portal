@@ -6,14 +6,15 @@ import { Jlogin } from './Components-JobseekerSignup/Jlogin'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Jsignup } from './Components-JobseekerSignup/Jsignup'
 import { Jcreatepassword } from './Components-JobseekerSignup/Jcreatepassword'
-import { Jforgotpassword } from './Components-JobseekerSignup/JForgotpassword'
+import { Jforgotpassword } from './Components-JobseekerSignup/Jforgotpassword'
+import { Afterloginlanding } from './Components-Jobseeker/Afterloginlanding'
 
 const router = createBrowserRouter([{
   path: '/Job-portal',
   element: <Landingpage />,
 },
 {
-  path: '/Job-portal/employer',
+  path: '/Job-portal/employer/login',
   element: <Elogin />,
 },
 {
@@ -29,8 +30,12 @@ const router = createBrowserRouter([{
   element: <Jsignup />,
 },
 {
-  path: '/Job-portal/jobseeker/login/forgetpassword/createpassword',
+  path: '/Job-portal/jobseeker/login/forgotpassword/createpassword',
   element: <Jcreatepassword />,
+},
+{
+  path: '/Job-portal/jobseeker/',
+  element: <Afterloginlanding />,
 }])
 
 function App() {

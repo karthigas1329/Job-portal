@@ -41,7 +41,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-right: 8%;
+  margin-right: 10%;
 }
 
 .login-btn {
@@ -72,12 +72,12 @@
 
 .separator {
   width: 2px;
-  height: 32px;
+  height: 40px;
   background-color: #EDEDED;
   opacity: 1;
 }
 
-.Emp-Log-link{
+.emp-log-link{
   text-decoration: none;
   color: #032240;
   font-size: 20px;
