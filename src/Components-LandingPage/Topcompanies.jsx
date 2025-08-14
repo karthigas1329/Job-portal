@@ -11,6 +11,9 @@ import Google from '../assets/GOOG.png'
 import Infy from '../assets/INFY_BIG.png'
 import Tcs from '../assets/TCS.png'
 import META from '../assets/META_BIG.png'
+import starIcon from '../assets/Star_icon.png'
+import left from '../assets/left_arrow.png'
+import right from '../assets/right_arrow.png'
 
 /* Below Code is removed after backend integration*/
 const topCompaniesList = [
@@ -80,47 +83,33 @@ const topCompaniesList = [
   }
 ];
 
-const CustomPrevArrow = ({ className, style, onClick }) => (
-  <div
-    className="custom-arrow custom-prev"
-    onClick={onClick}
-    style={{ ...style }}
-  >
-    &#8249;
+const CustomPrevArrow = ({ onClick }) => (
+  <div className="custom-arrow prev" onClick={onClick}>
+    <img src={left} alt="Previous" />
   </div>
 );
 
-const CustomNextArrow = ({ className, style, onClick }) => (
-  <div
-    className="custom-arrow custom-next"
-    onClick={onClick}
-    style={{ ...style }}
-  >
-    &#8250;
+const CustomNextArrow = ({ onClick }) => (
+  <div className="custom-arrow next" onClick={onClick}>
+    <img src={right} alt="Next" />
   </div>
 );
 
 export const Topcompanies = () => {
   const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: true,
-  prevArrow: <CustomPrevArrow />,
-  nextArrow: <CustomNextArrow />,
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 600,
-      settings: { slidesToShow: 1 },
-    },
-  ],
- };
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
+    ],
+  };
 
   return (
       <section className="carousel-wrapper">
@@ -131,7 +120,7 @@ export const Topcompanies = () => {
               <img className="carousel-company-logo" src={company.logo} alt={company.name}/>
               <div className="carousel-card-header">
                 <h3>{company.name}</h3>
-                <p><span className="star">★</span> {company.rating} | {company.reviews} reviews</p>
+                <p className='carousel-company-rating'><span className="star"><img src={starIcon} /></span> {company.rating} | {company.reviews} reviews</p>
               </div>
               <p className="carousel-desc">{company.desc}</p>
               <button className="carousel-view-jobs">View jobs</button>

@@ -1,7 +1,6 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
 }
 
 .header-icons {
@@ -9,3 +8,4 @@ body {
   margin: 15px;
   cursor: pointer;
 }
+
