@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import workTime from '../assets/WorkTime.png'
 import Google from '../assets/GOOG.png'
 import eye from '../assets/show_password.png'
@@ -8,6 +9,9 @@ import './Jsignup.css'
 
 export const Jsignup = () => {
   const [passwordShow, setPasswordShow] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [apiError, setApiError] = useState("")
+  const navigate = useNavigate()
 
   const togglePasswordView = () => {
     setPasswordShow((prev) => !prev)
@@ -15,7 +19,6 @@ export const Jsignup = () => {
 
   const initialValues = { username: "", email: "", password: "", phone: "" }
   const [formValues, setFormValues] = useState(initialValues)
-
   const [errors, setErrors] = useState({})
 
   const handleForm = (e) => {
@@ -26,7 +29,6 @@ export const Jsignup = () => {
 
   const validateForm = () => {
     const newErrors = {}
-
     const regexOfMail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
     if (!formValues.username.trim()) {
@@ -34,7 +36,7 @@ export const Jsignup = () => {
     }
 
     if (!formValues.email.trim()) {
-      newErrors.email = "email is required"
+      newErrors.email = "Email is required"
     } else if (!regexOfMail.test(formValues.email)) {
       newErrors.email = "Invalid email format"
     }
@@ -49,11 +51,40 @@ export const Jsignup = () => {
     return Object.keys(newErrors).length === 0
   }
 
-  function handleSubmit(formData) {
-    if (!validateForm()) {
-      return false // stops form submit if errors
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!validateForm()) return
+
+    setLoading(true)
+    setApiError("")
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/signup/",
+        formValues,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+
+      console.log("Signup Success:", response.data)
+      alert("Signup successful!")
+      navigate("/Job-portal/jobseeker/login") // redirect to login
+    } catch (error) {
+      console.error("Signup Error:", error)
+      if (error.response && error.response.data) {
+        setApiError(
+          error.response.data.detail ||
+          JSON.stringify(error.response.data)
+        )
+      } else {
+        setApiError("Server error. Please try again later.")
+      }
+    } finally {
+      setLoading(false)
     }
-    console.log("Signed up successfully") // This Code is removed after backend integration
   }
 
   return (
@@ -75,40 +106,70 @@ export const Jsignup = () => {
           <img src={workTime} alt="Signup Illustration" />
         </div>
 
-        <form action={handleSubmit} className="j-sign-up-form">
+        <form onSubmit={handleSubmit} className="j-sign-up-form">
           <h2>Create an Account</h2>
 
           <label>User name</label>
-          <input type="text" name="username" value={formValues.username} onChange={handleForm} placeholder="Enter your name" className={errors.username ? "input-error" : ""} />
+          <input
+            type="text"
+            name="username"
+            value={formValues.username}
+            onChange={handleForm}
+            placeholder="Enter your name"
+            className={errors.username ? "input-error" : ""}
+          />
           {errors.username && <span className="error-msg">{errors.username}</span>}
 
           <label>Email ID</label>
-          <input type="text" name="email" value={formValues.email} onChange={handleForm} placeholder="Enter your Email ID" className={errors.email ? "input-error" : ""} />
+          <input
+            type="text"
+            name="email"
+            value={formValues.email}
+            onChange={handleForm}
+            placeholder="Enter your Email ID"
+            className={errors.email ? "input-error" : ""}
+          />
           {errors.email && <span className="error-msg">{errors.email}</span>}
 
           <label>Password</label>
           <div className="password-wrapper">
-            <input type={passwordShow ? "password" : "text"} name="password" value={formValues.password} onChange={handleForm} placeholder="Create a new password" className={errors.password ? "input-error" : ""} />
-            <span className="eye-icon" onClick={togglePasswordView}><img src={passwordShow ? eye : eyeHide} className='show-icon' alt='show' /></span>
+            <input
+              type={passwordShow ? "password" : "text"}
+              name="password"
+              value={formValues.password}
+              onChange={handleForm}
+              placeholder="Create a new password"
+              className={errors.password ? "input-error" : ""}
+            />
+            <span className="eye-icon" onClick={togglePasswordView}>
+              <img src={passwordShow ? eye : eyeHide} className='show-icon' alt='show' />
+            </span>
           </div>
           {errors.password && <span className="error-msg">{errors.password}</span>}
 
           <label>Mobile number (optional)</label>
-          <input type="tel" name="phone" value={formValues.phone} onChange={handleForm} placeholder="Enter your mobile number" />
+          <input
+            type="tel"
+            name="phone"
+            value={formValues.phone}
+            onChange={handleForm}
+            placeholder="Enter your mobile number"
+          />
 
-          <button className="j-sign-up-submit">Signup</button>
+          {apiError && <p className="error-msg">{apiError}</p>}
+
+          <button className="j-sign-up-submit" disabled={loading}>
+            {loading ? "Signing up..." : "Signup"}
+          </button>
 
           <div className="divider">Or Continue with</div>
 
-          <button className="google-btn">
-            <img
-              src={Google}
-              alt="Google"
-            />
+          <button type="button" className="google-btn">
+            <img src={Google} alt="Google" />
             Google
           </button>
         </form>
       </div>
     </div>
-  );
+  )
 }
